@@ -4,18 +4,17 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:front_end/common/color.dart';
 import 'package:front_end/common/size.dart';
 import 'package:front_end/components/meta-title.dart';
-import 'package:front_end/screen/forgot.dart';
-import 'package:front_end/screen/register.dart';
+import 'package:front_end/screen/login.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   bool _isObscure = true;
 
   @override
@@ -38,7 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         radius: 24,
                         backgroundColor: ColorPallete.black60,
                         child: Padding(
-                          padding: EdgeInsets.only(left: 8),
+                          padding: const EdgeInsets.only(left: 8),
                           child: IconButton(
                             icon: const Icon(
                               Icons.arrow_back_ios,
@@ -48,7 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             splashColor: Colors.transparent,
                             onPressed: () {
                               Route route = MaterialPageRoute(
-                                  builder: (context) => RegisterScreen());
+                                  builder: (context) => LoginScreen());
                               Navigator.push(context, route);
                             },
                           ),
@@ -60,10 +59,51 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: 12,
                   ),
                   const MetaTitle(
-                      title: 'Hello Again!',
+                      title: 'Register Account',
                       desc: 'Fill your details or continue with social media'),
                   const SizedBox(
                     height: 30,
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(bottom: 12.0, left: 8, right: 8),
+                    child: Text(
+                      "Your Name",
+                      style: GoogleFonts.raleway(
+                        textStyle: TextStyle(
+                            color: ColorPallete.black100,
+                            fontSize: Sizes.bodym,
+                            fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(bottom: 12.0, left: 8, right: 8),
+                    child: TextFormField(
+                      style: const TextStyle(
+                        fontSize: 14.0,
+                        height: 2.0,
+                      ),
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: ColorPallete.black60,
+                        enabledBorder: OutlineInputBorder(
+                            borderSide:
+                                BorderSide(width: 3, color: Colors.transparent),
+                            borderRadius: BorderRadius.circular(14.0)),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(14.0),
+                        ),
+                        contentPadding: const EdgeInsets.symmetric(
+                            vertical: 14, horizontal: 12),
+                        hoverColor: ColorPallete.primaryBlue,
+                        hintText: 'xxxxxxxx',
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 24,
                   ),
                   Padding(
                     padding:
@@ -154,33 +194,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        ElevatedButton(
-                          onPressed: () {
-                            Route route = MaterialPageRoute(
-                                builder: (context) => ForgotScreen());
-                            Navigator.push(context, route);
-                          },
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.transparent,
-                              foregroundColor: ColorPallete.black80,
-                              elevation: 0,
-                              padding: const EdgeInsets.only(left: 8),
-                              side: const BorderSide(
-                                width: 1.0,
-                                color: Colors.transparent,
-                              )),
-                          child: const Text('Recovery Password'),
-                        ),
-                      ],
-                    ),
-                  ),
                   const SizedBox(
-                    height: 20,
+                    height: 30,
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -195,8 +210,12 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           elevation: 0,
                         ),
-                        onPressed: () {},
-                        child: const Text("Sign In"),
+                        onPressed: () {
+                          Route route = MaterialPageRoute(
+                              builder: (context) => LoginScreen());
+                          Navigator.push(context, route);
+                        },
+                        child: const Text("Sign Up"),
                       ),
                     ),
                   ),
@@ -243,11 +262,11 @@ class _LoginScreenState extends State<LoginScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text('New User?'),
+                  const Text('Already have Account?'),
                   ElevatedButton(
                     onPressed: () {
                       Route route = MaterialPageRoute(
-                          builder: (context) => RegisterScreen());
+                          builder: (context) => LoginScreen());
                       Navigator.push(context, route);
                     },
                     style: ElevatedButton.styleFrom(
@@ -259,7 +278,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           width: 1.0,
                           color: Colors.transparent,
                         )),
-                    child: const Text('Created Account'),
+                    child: const Text('Log In'),
                   ),
                 ],
               )
