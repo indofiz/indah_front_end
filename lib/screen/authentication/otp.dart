@@ -4,8 +4,10 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:front_end/common/color.dart';
 import 'package:front_end/common/size.dart';
 import 'package:front_end/components/meta-title.dart';
-import 'package:front_end/screen/forgot.dart';
-import 'package:front_end/screen/register.dart';
+import 'package:front_end/screen/authentication/forgot.dart';
+import 'package:front_end/screen/authentication/login.dart';
+import 'package:front_end/screen/authentication/register.dart';
+import 'package:front_end/screen/profile/profile.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OTPScreen extends StatefulWidget {
@@ -48,7 +50,7 @@ class _OTPScreenState extends State<OTPScreen> {
                             splashColor: Colors.transparent,
                             onPressed: () {
                               Route route = MaterialPageRoute(
-                                  builder: (context) => RegisterScreen());
+                                  builder: (context) => LoginScreen());
                               Navigator.push(context, route);
                             },
                           ),
@@ -215,7 +217,11 @@ class _OTPScreenState extends State<OTPScreen> {
                           ),
                           elevation: 0,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Route route = MaterialPageRoute(
+                              builder: (context) => ProfileScreen());
+                          Navigator.push(context, route);
+                        },
                         child: const Text("Verify"),
                       ),
                     ),

@@ -4,9 +4,9 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:front_end/common/color.dart';
 import 'package:front_end/common/size.dart';
 import 'package:front_end/components/meta-title.dart';
-import 'package:front_end/screen/forgot.dart';
-import 'package:front_end/screen/otp.dart';
-import 'package:front_end/screen/register.dart';
+import 'package:front_end/screen/authentication/forgot.dart';
+import 'package:front_end/screen/authentication/otp.dart';
+import 'package:front_end/screen/authentication/register.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginScreen extends StatefulWidget {

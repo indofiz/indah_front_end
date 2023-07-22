@@ -4,7 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:front_end/common/color.dart';
 import 'package:front_end/common/size.dart';
 import 'package:front_end/components/meta-title.dart';
-import 'package:front_end/screen/login.dart';
+import 'package:front_end/screen/authentication/login.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class RegisterScreen extends StatefulWidget {
