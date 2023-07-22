@@ -5,6 +5,7 @@ import 'package:front_end/common/color.dart';
 import 'package:front_end/common/size.dart';
 import 'package:front_end/components/meta-title.dart';
 import 'package:front_end/screen/forgot.dart';
+import 'package:front_end/screen/otp.dart';
 import 'package:front_end/screen/register.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -195,7 +196,11 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           elevation: 0,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Route route = MaterialPageRoute(
+                              builder: (context) => OTPScreen());
+                          Navigator.push(context, route);
+                        },
                         child: const Text("Sign In"),
                       ),
                     ),
